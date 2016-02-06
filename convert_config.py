@@ -60,7 +60,7 @@ def convert_from_curl_to_set(input_text):
         elif line[-1] == '}':
             top_elm.pop()
         elif '; ## SECRET-DATA' in line:
-            output_text += indent + 'set ' + line.strip('; ## SECRET-DATA') + '\n'
+            output_text += indent + 'set ' + ' '.join(top_elm) + " " + line.strip('; ## SECRET-DATA') + '\n'
         else:
             output_text += line + '\n'
     return output_text
