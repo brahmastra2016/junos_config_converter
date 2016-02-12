@@ -57,6 +57,33 @@ up
 ```
 
 
+ Made changes so that output is in Juniper SET style output
+
+INPUT (Curl Style)
+
+ system {
+    host-name PE36;
+    time-zone America/New_York;
+    switchover-on-routing-crash;
+    authentication-order [ tacplus password ];
+    ports {
+        console {
+            log-out-on-disconnect;
+           type vt100;
+       }
+    }
+
+ OUTPUT (SET Style)
+
+ set  system host-name PE36
+ set  system time-zone America/New_York
+ set  system switchover-on-routing-crash
+ set  system authentication-order [ tacplus password ]
+ set  system ports console log-out-on-disconnect
+ set  system ports console type vt100
+
+
+
 If you want to know the detial samle code, you should see sample/sample_from_shwo_to_set.py.
 
 
